@@ -7,6 +7,7 @@ public class PlayerCtrl : MonoBehaviour
     // 변수선언
     private float v;
     private float h;
+    private float r;
 
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
     void Start()
@@ -18,10 +19,14 @@ public class PlayerCtrl : MonoBehaviour
     {
         v = Input.GetAxis("Vertical");   // -1.0f ~ 0.0f ~ +1.0f
         h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
+        r = Input.GetAxis("Mouse X");
 
         // 벡터의 덧셈연산
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
+        // 이동처리
         transform.Translate(moveDir.normalized * 0.01f);
+        // 회전처리
+        transform.Rotate(Vector3.up * r * 50.0f);
 
     }
 
