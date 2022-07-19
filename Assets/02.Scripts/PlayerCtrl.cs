@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    // 변수선언
+    // Private 변수선언
     private float v;
     private float h;
     private float r;
+
+    // Public 변수선언
+    public float moveSpeed = 8.0f;
+    public float turnSpeed = 50.0f;
 
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
     void Start()
@@ -24,9 +28,9 @@ public class PlayerCtrl : MonoBehaviour
         // 벡터의 덧셈연산
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
         // 이동처리
-        transform.Translate(moveDir.normalized * 0.01f);
+        transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
         // 회전처리
-        transform.Rotate(Vector3.up * r * 50.0f);
+        transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
 
     }
 
