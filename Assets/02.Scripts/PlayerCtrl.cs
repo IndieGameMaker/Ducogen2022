@@ -22,11 +22,11 @@ public class PlayerCtrl : MonoBehaviour
 
     void Update()
     {
-        v = Input.GetAxis("Vertical");
+        v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
         Debug.Log(v);
 
         //transform.position += new Vector3(0, 0, 0.01f);
-        transform.Translate(Vector3.forward * 0.01f);
+        transform.Translate(Vector3.forward * v * 0.01f);
     }
 
     /* 정규화 벡터(Normalized Vector)
