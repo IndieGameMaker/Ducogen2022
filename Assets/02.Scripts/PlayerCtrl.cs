@@ -10,15 +10,25 @@ public class PlayerCtrl : MonoBehaviour
 
     }
 
-    // 화면을 렌더링하는 주기마다 호출(랜더링 주기)
+    // comment : 화면을 렌더링하는 주기마다 호출(랜더링 주기)
+
     /*
         Vector3 (x, y, z)
-     */
+        벡터 스터럭처
+    */
+
     void Update()
     {
-        transform.position += new Vector3(0, 0, 0.01f); //Z값을 0.01f 증가
-
-        //transform.position = transform.position + new Vector3(0, 0, 0.01f);
+        //transform.position += new Vector3(0, 0, 0.01f);
+        transform.Translate(Vector3.forward * 0.01f);
     }
 
+    /* 정규화 벡터(Normalized Vector)
+        Vector3.forward = new Vector3(0, 0, 1)
+        Vector3.up      = new Vector3(0, 1, 0)
+        Vector3.right   = new Vector3(1, 0, 0)
+
+        Vector3.one     = new Vector3(1, 1, 1)
+        Vector3.zero    = new Vector3(0, 0, 0)
+    */
 }
