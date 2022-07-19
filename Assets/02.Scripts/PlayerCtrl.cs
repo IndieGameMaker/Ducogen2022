@@ -31,7 +31,6 @@ public class PlayerCtrl : MonoBehaviour
         transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
         // 회전처리
         transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
-
     }
 
     /* 정규화 벡터(Normalized Vector)
