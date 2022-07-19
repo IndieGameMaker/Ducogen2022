@@ -19,8 +19,10 @@ public class PlayerCtrl : MonoBehaviour
         v = Input.GetAxis("Vertical");   // -1.0f ~ 0.0f ~ +1.0f
         h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
 
-        transform.Translate(Vector3.forward * v * 0.01f);
-        transform.Translate(Vector3.right * h * 0.01f);
+        // 벡터의 덧셈연산
+        Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
+        transform.Translate(moveDir * 0.01f);
+
     }
 
     /* 정규화 벡터(Normalized Vector)
