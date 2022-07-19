@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
+    // 변수선언
+    private float v;
+
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
     void Start()
     {
@@ -19,11 +22,17 @@ public class PlayerCtrl : MonoBehaviour
 
     void Update()
     {
+        v = Input.GetAxis("Vertical");
+        Debug.Log(v);
+
         //transform.position += new Vector3(0, 0, 0.01f);
         transform.Translate(Vector3.forward * 0.01f);
     }
 
     /* 정규화 벡터(Normalized Vector)
+        Vector3 -> 구조체(Structure)
+
+
         Vector3.forward = new Vector3(0, 0, 1)
         Vector3.up      = new Vector3(0, 1, 0)
         Vector3.right   = new Vector3(1, 0, 0)
