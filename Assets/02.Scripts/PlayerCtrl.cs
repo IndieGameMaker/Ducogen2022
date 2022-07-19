@@ -6,6 +6,7 @@ public class PlayerCtrl : MonoBehaviour
 {
     // 변수선언
     private float v;
+    private float h;
 
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
     void Start()
@@ -13,20 +14,13 @@ public class PlayerCtrl : MonoBehaviour
 
     }
 
-    // comment : 화면을 렌더링하는 주기마다 호출(랜더링 주기)
-
-    /*
-        Vector3 (x, y, z)
-        벡터 스터럭처
-    */
-
     void Update()
     {
-        v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
-        Debug.Log(v);
+        v = Input.GetAxis("Vertical");   // -1.0f ~ 0.0f ~ +1.0f
+        h = Input.GetAxis("Horizontal"); // -1.0f ~ 0.0f ~ +1.0f
 
-        //transform.position += new Vector3(0, 0, 0.01f);
         transform.Translate(Vector3.forward * v * 0.01f);
+        transform.Translate(Vector3.right * h * 0.01f);
     }
 
     /* 정규화 벡터(Normalized Vector)
