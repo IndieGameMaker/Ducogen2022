@@ -228,6 +228,20 @@ MonoBehaviour:
   moveSpeed: 8
   turnSpeed: 800
   anim: {fileID: 0}
+--- !u!114 &224195913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224195909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c486bdf067d426f8cb4f7d5cfcaf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 193239201358385222, guid: 1eb2e4e11bb3c43f9a3060cb687ab9b2, type: 3}
+  firePos: {fileID: 412903290}
 --- !u!1001 &243658364
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -368,6 +382,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &412903289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412903290}
+  m_Layer: 0
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412903290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412903289}
+  m_LocalRotation: {x: 0.031485748, y: -0.027820636, z: 0.0008767279, w: 0.9991166}
+  m_LocalPosition: {x: -0.146, y: 0.09, z: 0.724}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1294538996}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 3.61, y: -3.19, z: 0}
 --- !u!1001 &652297216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -787,27 +832,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eb2e4e11bb3c43f9a3060cb687ab9b2, type: 3}
---- !u!1 &7801565598172897325 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 193239201358385222, guid: 1eb2e4e11bb3c43f9a3060cb687ab9b2, type: 3}
-  m_PrefabInstance: {fileID: 7801565598172897324}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &7801565598172897326
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7801565598172897325}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &8631375388191726081
 PrefabInstance:
   m_ObjectHideFlags: 0
