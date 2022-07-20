@@ -19,7 +19,8 @@ public class PlayerCtrl : MonoBehaviour
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
     void Start()
     {
-
+        anim = GetComponent<Animation>();
+        anim.Play("Idle");
     }
 
     void Update()

@@ -227,6 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   turnSpeed: 800
+  anim: {fileID: 0}
 --- !u!1001 &243658364
 PrefabInstance:
   m_ObjectHideFlags: 0
