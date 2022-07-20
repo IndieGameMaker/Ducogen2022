@@ -8,7 +8,9 @@ public class RemoveBullet : MonoBehaviour
     void OnCollisionEnter(Collision coll)
     {
         // 충돌한 객체가 Bullet인지 여부를 확인
-        if (coll.gameObject.tag == "BULLET")
+        //if (coll.gameObject.tag == "BULLET") //GC
+
+        if (coll.gameObject.CompareTag("BULLET"))
         {
             // 총알 삭제
             Destroy(coll.gameObject);
