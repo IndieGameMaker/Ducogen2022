@@ -13,6 +13,9 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 8.0f;
     public float turnSpeed = 50.0f;
 
+    // 접근할 컴포넌트를 저장할 변수를 선언
+    public Animation anim;
+
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
     void Start()
     {
