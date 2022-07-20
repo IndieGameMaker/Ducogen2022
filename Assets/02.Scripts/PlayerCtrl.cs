@@ -16,10 +16,30 @@ public class PlayerCtrl : MonoBehaviour
     // 접근할 컴포넌트를 저장할 변수를 선언
     public Animation anim;
 
+    /*
+        프로퍼티(속성)
+        Car.speed = 200;
+        Car.color = yellow;
+        Car.capacity = 4;
+
+        메소드(함수) - 명령(동사)
+        anim.Play(인자);
+        Input.GetAxis(인자);
+
+        Camel Case (단봉 낙타)
+        moveSpeed
+        변수, 속성
+
+        Pascal Case
+        MoveSpeed
+        클래스, 스트럭처(구조체), 메소드(함수)
+    */
+
+
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
     void Start()
     {
-        anim = GetComponent<Animation>();
+        anim = this.gameObject.GetComponent<Animation>();
         anim.Play("Idle");
     }
 
@@ -35,17 +55,33 @@ public class PlayerCtrl : MonoBehaviour
         transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
         // 회전처리
         transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
+
+        PlayerAnimation();
     }
 
-    /* 정규화 벡터(Normalized Vector)
-        Vector3 -> 구조체(Structure)
+    void PlayerAnimation()
+    {
+        // 전진
+        if (v >= 0.1f)
+        {
+            anim.CrossFade("RunF");
+        }
+        else if (v <= -0.1f)    // 후진
+        {
+            anim.CrossFade("RunB");
+        }
+        else if (h >= 0.1f) //오른쪽
+        {
+            anim.CrossFade("RunR");
+        }
+        else if (h <= -0.1f) //왼쪽
+        {
+            anim.CrossFade("RunL");
+        }
+        else
+        {
+            anim.CrossFade("Idle");
+        }
+    }
 
-
-        Vector3.forward = new Vector3(0, 0, 1)
-        Vector3.up      = new Vector3(0, 1, 0)
-        Vector3.right   = new Vector3(1, 0, 0)
-
-        Vector3.one     = new Vector3(1, 1, 1)
-        Vector3.zero    = new Vector3(0, 0, 0)
-    */
 }
