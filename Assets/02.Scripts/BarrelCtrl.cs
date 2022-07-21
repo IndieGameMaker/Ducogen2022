@@ -8,6 +8,9 @@ public class BarrelCtrl : MonoBehaviour
     // 텍스처를 저장하기 위한 배열
     public Texture[] textures;
 
+    // 데미지를 누적할 변수 선언
+    private int hitCount = 0;
+
     void Start()
     {
         renderer = GetComponentInChildren<MeshRenderer>();
@@ -22,4 +25,22 @@ public class BarrelCtrl : MonoBehaviour
 
     }
 
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            if (++hitCount == 3)
+            {
+                ExpBarrel();
+            }
+        }
+    }
+
+    void ExpBarrel()
+    {
+        var rb = this.gameObject.AddComponent<Rigidbody>();
+        rb.AddForce(Vector3.up * 1500.0f);
+
+        Destroy(this.gameObject, 2.0f);
+    }
 }
