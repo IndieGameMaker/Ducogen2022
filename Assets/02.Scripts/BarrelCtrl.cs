@@ -53,5 +53,7 @@ public class BarrelCtrl : MonoBehaviour
         var effect = Instantiate(expEffect, transform.position, Quaternion.identity);
         Destroy(effect, 6.0f);
         Destroy(this.gameObject, 2.0f);
+
+        audio.PlayOneShot(expSfx, 0.9f);
     }
 }
