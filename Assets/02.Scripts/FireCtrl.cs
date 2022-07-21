@@ -47,6 +47,11 @@ public class FireCtrl : MonoBehaviour
         Vector2 offset = new Vector2(Random.Range(0, 2) * 0.5f, Random.Range(0, 2) * 0.5f);
         muzzleFlash.material.mainTextureOffset = offset;
 
+        // 회전처리
+        float angle = Random.Range(0, 360);
+        muzzleFlash.transform.localRotation = Quaternion.Euler(0, 0, angle);
+        //Quaternion.Euler(Vector3.forward * angle);
+
         muzzleFlash.enabled = true;
 
         yield return new WaitForSeconds(0.3f);
