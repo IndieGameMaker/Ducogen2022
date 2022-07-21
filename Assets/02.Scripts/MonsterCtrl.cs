@@ -48,6 +48,19 @@ public class MonsterCtrl : MonoBehaviour
             // 몬스터와 주인공간의 거리를 계산
             float dist = Vector3.Distance(monsterTr.position, playerTr.position);
 
+            if (dist <= attackDist)
+            {
+                state = State.ATTACK;
+            }
+            else if (dist <= traceDist)
+            {
+                state = State.TRACE;
+            }
+            else
+            {
+                state = State.IDLE;
+            }
+
 
             yield return new WaitForSeconds(0.3f);
         }
