@@ -444,6 +444,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 193239201358385222, guid: 1eb2e4e11bb3c43f9a3060cb687ab9b2, type: 3}
   firePos: {fileID: 412903290}
   fireSfx: {fileID: 8300000, guid: 641ff25f5da444ddf8874d961a56f0c9, type: 3}
+  muzzleFlash: {fileID: 1384735622}
 --- !u!82 &224195914
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1720,7 +1721,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.14420386, y: -0.00000005747304, z: 0.000000008375373, w: 0.989548}
+  m_LocalRotation: {x: 0.14420386, y: -0.000000008513271, z: 0.0000000012406134, w: 0.989548}
   m_LocalPosition: {x: -0.15, y: 2.37, z: -1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2645,7 +2646,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 2.7333333, y: 1}
+    m_SensorSize: {x: 2.290476, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2661,7 +2662,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970620288}
-  m_LocalRotation: {x: 0.14420386, y: -0.00000005747304, z: 0.000000008375373, w: 0.989548}
+  m_LocalRotation: {x: 0.14420386, y: -0.000000008513271, z: 0.0000000012406134, w: 0.989548}
   m_LocalPosition: {x: -0.15, y: 2.37, z: -1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
