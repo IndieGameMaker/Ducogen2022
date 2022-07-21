@@ -1,3 +1,4 @@
+#pragma warning disable CS0108, IDE0051
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class BarrelCtrl : MonoBehaviour
 
     // 데미지를 누적할 변수 선언
     private int hitCount = 0;
+
+    // 폭발후 발생시킬 폭발이펙트 프리팹
+    public GameObject expEffect;
 
     void Start()
     {

@@ -1,3 +1,5 @@
+#pragma warning disable CS0108, IDE0051
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
