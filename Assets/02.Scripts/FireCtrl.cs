@@ -37,6 +37,17 @@ public class FireCtrl : MonoBehaviour
         Instantiate(bulletPrefab, firePos.position, firePos.rotation);
         // 총 발사 사운드 실행
         audio.PlayOneShot(fireSfx, 0.8f);
+        StartCoroutine(ShowMuzzleFlash());
+    }
+
+    // Co-routine
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+        // Waiting... Sleep
+        yield return new WaitForSeconds(0.3f);
+
+        muzzleFlash.enabled = false;
     }
 }
 
