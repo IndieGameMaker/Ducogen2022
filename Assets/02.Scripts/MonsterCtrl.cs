@@ -34,11 +34,7 @@ public class MonsterCtrl : MonoBehaviour
         monsterTr = GetComponent<Transform>(); //monsterTr = transform;
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
 
-        // GameObject playerObject = GameObject.FindGameObjectWithTag("PLAYER");
-        // if (playerObject != null)
-        // {
-        //     playerTr = playerObject.GetComponent<Transform>();
-        // }
+        StartCoroutine(CheckMonsterState());
     }
 
     IEnumerator CheckMonsterState()
@@ -60,7 +56,6 @@ public class MonsterCtrl : MonoBehaviour
             {
                 state = State.IDLE;
             }
-
 
             yield return new WaitForSeconds(0.3f);
         }
