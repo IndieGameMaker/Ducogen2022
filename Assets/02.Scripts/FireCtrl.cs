@@ -14,9 +14,12 @@ public class FireCtrl : MonoBehaviour
     // 발생시킬 음원파일을 저장할 변수
     public AudioClip fireSfx;
 
+    public MeshRenderer muzzleFlash;
+
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        muzzleFlash.enabled = false;
     }
 
     void Update()
