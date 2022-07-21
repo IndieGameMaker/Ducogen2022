@@ -45,8 +45,8 @@ public class BarrelCtrl : MonoBehaviour
         var rb = this.gameObject.AddComponent<Rigidbody>();
         rb.AddForce(Vector3.up * 1500.0f);
 
-        Instantiate(expEffect, transform.position, Quaternion.identity);
-
+        var effect = Instantiate(expEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 6.0f);
         Destroy(this.gameObject, 2.0f);
     }
 }
