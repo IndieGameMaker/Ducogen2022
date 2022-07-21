@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class MonsterCtrl : MonoBehaviour
 {
+    // 열거형 변수(Enumerator)
+    // 몬스터의 상태를 정의
+    public enum State
+    {
+        IDLE, TRACE, ATTACK, DIE
+    }
+
+    // 몬스터의 상태 변수
+    // 접근제한자 변수_데이터_타입 변수명
+    public State state;
+
     // 몬스터의 Transform
     private Transform monsterTr;
     // 주인공의 Transform
