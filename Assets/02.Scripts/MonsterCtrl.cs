@@ -42,6 +42,8 @@ public class MonsterCtrl : MonoBehaviour
     // Monster Health
     private float hp = 100.0f;
 
+    public GameObject bloodEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -123,6 +125,14 @@ public class MonsterCtrl : MonoBehaviour
         if (coll.collider.CompareTag("BULLET"))
         {
             Destroy(coll.gameObject);
+
+
+
+            var blood = Instantiate(bloodEffect,
+                                    coll.GetContact(0).point,
+                                    Quaternion.identity);
+            Destroy(blood, 5.0f);
+
             anim.SetTrigger(hashHit);
 
             hp -= 20.0f;  // hp = hp - 20.0f;
