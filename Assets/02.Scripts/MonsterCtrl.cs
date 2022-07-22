@@ -23,6 +23,7 @@ public class MonsterCtrl : MonoBehaviour
     private Transform playerTr;
     // NavMeshAgent
     private NavMeshAgent agent;
+    private Animator anim;
 
     // 추적 사정거리
     public float traceDist = 10.0f;
@@ -38,6 +39,7 @@ public class MonsterCtrl : MonoBehaviour
         monsterTr = GetComponent<Transform>(); //monsterTr = transform;
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
@@ -78,10 +80,12 @@ public class MonsterCtrl : MonoBehaviour
             switch (state)
             {
                 case State.IDLE:
+                    anim.SetBool("IsTrace", false);
                     agent.isStopped = true;
                     break;
 
                 case State.TRACE:
+                    anim.SetBool("IsTrace", true);
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
                     break;
