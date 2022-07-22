@@ -135,6 +135,10 @@ public class MonsterCtrl : MonoBehaviour
 
     public void YouWin()
     {
+        // 모든 코루틴 함수를 정지
+        StopAllCoroutines();
+        agent.isStopped = true;
 
+        anim.SetTrigger(hashPlayerDie);
     }
 }
