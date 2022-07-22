@@ -40,6 +40,7 @@ public class MonsterCtrl : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     // 몬스터의 상태 변경
@@ -73,7 +74,24 @@ public class MonsterCtrl : MonoBehaviour
     {
         while (!isDie)
         {
+            // 몬스터의 상태(state)에 따라서 로직을 분기
+            switch (state)
+            {
+                case State.IDLE:
+                    agent.isStopped = true;
+                    break;
 
+                case State.TRACE:
+                    agent.SetDestination(playerTr.position);
+                    agent.isStopped = false;
+                    break;
+
+                case State.ATTACK:
+                    break;
+
+                case State.DIE:
+                    break;
+            }
 
             yield return new WaitForSeconds(0.3f);
         }
