@@ -109,6 +109,7 @@ public class MonsterCtrl : MonoBehaviour
                     isDie = true;
                     anim.SetTrigger(hashDie);
                     agent.isStopped = true;
+                    GetComponent<CapsuleCollider>().enabled = false;
                     break;
             }
 
