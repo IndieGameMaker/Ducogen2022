@@ -32,11 +32,20 @@ public class FireCtrl : MonoBehaviour
         }
     }
 
+    RaycastHit hit;
+
     void Fire()
     {
         // 게임오브젝트 또는 프리팹을 생성하는 메소드
         // Instantiate(생성할객체, 위치, 각도)
-        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        // Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+
+        if (Physics.Raycast(firePos.position, firePos.forward, out hit, 10.0f))
+        {
+            Debug.Log(hit.collider.name);
+        }
+
+
         // 총 발사 사운드 실행
         audio.PlayOneShot(fireSfx, 0.8f);
         StartCoroutine(ShowMuzzleFlash());
