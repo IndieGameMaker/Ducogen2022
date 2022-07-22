@@ -33,8 +33,9 @@ public class MonsterCtrl : MonoBehaviour
     // 몬스터의 사망여부
     public bool isDie = false;
 
-    // IsAttack 의 Hash값을 추출
+    // Animator Parameter의 Hash값을 추출
     private int hashIsAttack = Animator.StringToHash("IsAttack");
+    private int hashHit = Animator.StringToHash("Hit");
 
     // Start is called before the first frame update
     void Start()
@@ -111,6 +112,7 @@ public class MonsterCtrl : MonoBehaviour
         if (coll.collider.CompareTag("BULLET"))
         {
             Destroy(coll.gameObject);
+            anim.SetTrigger(hashHit);
         }
     }
 }
