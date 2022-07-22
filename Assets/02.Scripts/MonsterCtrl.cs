@@ -21,6 +21,8 @@ public class MonsterCtrl : MonoBehaviour
     private Transform monsterTr;
     // 주인공의 Transform
     private Transform playerTr;
+    // NavMeshAgent
+    private NavMeshAgent agent;
 
     // 추적 사정거리
     public float traceDist = 10.0f;
@@ -35,15 +37,12 @@ public class MonsterCtrl : MonoBehaviour
     {
         monsterTr = GetComponent<Transform>(); //monsterTr = transform;
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
+        agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(CheckMonsterState());
     }
 
-    void Update()
-    {
-
-    }
-
+    // 몬스터의 상태 변경
     IEnumerator CheckMonsterState()
     {
         while (!isDie)
@@ -68,4 +67,15 @@ public class MonsterCtrl : MonoBehaviour
         }
     }
 
+
+    // 몬스터 상태에 따라서 행동을 처리
+    IEnumerator MonsterAction()
+    {
+        while (!isDie)
+        {
+
+
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
 }
