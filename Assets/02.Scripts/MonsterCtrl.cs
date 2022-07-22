@@ -126,8 +126,6 @@ public class MonsterCtrl : MonoBehaviour
         {
             Destroy(coll.gameObject);
 
-
-
             var blood = Instantiate(bloodEffect,
                                     coll.GetContact(0).point,
                                     Quaternion.identity);
@@ -140,6 +138,22 @@ public class MonsterCtrl : MonoBehaviour
             {
                 state = State.DIE;
             }
+        }
+    }
+
+    public void OnDamage(Vector3 pos)
+    {
+        var blood = Instantiate(bloodEffect,
+                                pos,
+                                Quaternion.identity);
+        Destroy(blood, 5.0f);
+
+        anim.SetTrigger(hashHit);
+
+        hp -= 20.0f;  // hp = hp - 20.0f;
+        if (hp <= 0.0f)
+        {
+            state = State.DIE;
         }
     }
 
