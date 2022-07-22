@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// NavMeshAgent를 사용하기 위해 네임스페이스 추가
+using UnityEngine.AI;
 
 public class MonsterCtrl : MonoBehaviour
 {
@@ -35,6 +37,11 @@ public class MonsterCtrl : MonoBehaviour
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
 
         StartCoroutine(CheckMonsterState());
+    }
+
+    void Update()
+    {
+
     }
 
     IEnumerator CheckMonsterState()
