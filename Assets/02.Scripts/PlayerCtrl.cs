@@ -13,6 +13,10 @@ public class PlayerCtrl : MonoBehaviour
     public float moveSpeed = 8.0f;
     public float turnSpeed = 50.0f;
 
+    // Player Health 변수
+    private float initHp = 100.0f;
+    private float currHp = 100.0f;
+
     // 접근할 컴포넌트를 저장할 변수를 선언
     public Animation anim;
 
@@ -89,4 +93,11 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("PUNCH"))
+        {
+            Debug.Log(coll.gameObject);
+        }
+    }
 }
