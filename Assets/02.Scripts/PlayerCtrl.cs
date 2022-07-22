@@ -37,10 +37,15 @@ public class PlayerCtrl : MonoBehaviour
 
 
     // 변수의 초기화(게임의 초기화 로직), 1회 호출
-    void Start()
+    IEnumerator Start()
     {
+        turnSpeed = 0.0f;
         anim = this.gameObject.GetComponent<Animation>();
         anim.Play("Idle");
+
+        yield return new WaitForSeconds(0.3f);
+
+        turnSpeed = 800.0f;
     }
 
     void Update()

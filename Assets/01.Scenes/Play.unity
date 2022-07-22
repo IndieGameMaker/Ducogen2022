@@ -1137,6 +1137,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &589507932
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589507925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &605575694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1829,7 +1843,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.14420386, y: -0.000000008513271, z: 0.0000000012406134, w: 0.989548}
+  m_LocalRotation: {x: 0.14420386, y: 0.00000000851327, z: -0.0000000012406133, w: 0.989548}
   m_LocalPosition: {x: -0.15, y: 2.37, z: -1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2754,7 +2768,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 3.0425532, y: 1}
+    m_SensorSize: {x: 2.4255319, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2770,7 +2784,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970620288}
-  m_LocalRotation: {x: 0.14420386, y: -0.000000008513271, z: 0.0000000012406134, w: 0.989548}
+  m_LocalRotation: {x: 0.14420386, y: 0.00000000851327, z: -0.0000000012406133, w: 0.989548}
   m_LocalPosition: {x: -0.15, y: 2.37, z: -1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
