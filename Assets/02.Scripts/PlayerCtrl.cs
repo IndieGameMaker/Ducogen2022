@@ -98,6 +98,16 @@ public class PlayerCtrl : MonoBehaviour
         if (coll.CompareTag("PUNCH"))
         {
             Debug.Log(coll.gameObject);
+            currHp -= 10.0f;
+            if (currHp <= 0.0f)
+            {
+                PlayerDie();
+            }
         }
+    }
+
+    void PlayerDie()
+    {
+        Debug.Log("주인공 사망");
     }
 }
