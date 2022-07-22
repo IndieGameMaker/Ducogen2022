@@ -36,6 +36,7 @@ public class MonsterCtrl : MonoBehaviour
     // Animator Parameter의 Hash값을 추출
     private int hashIsAttack = Animator.StringToHash("IsAttack");
     private int hashHit = Animator.StringToHash("Hit");
+    private int hashDie = Animator.StringToHash("Die");
 
     // Monster Health
     private float hp = 100.0f;
@@ -105,6 +106,9 @@ public class MonsterCtrl : MonoBehaviour
                     break;
 
                 case State.DIE:
+                    isDie = true;
+                    anim.SetTrigger(hashDie);
+                    agent.isStopped = true;
                     break;
             }
 
