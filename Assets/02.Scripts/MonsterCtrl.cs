@@ -37,6 +37,7 @@ public class MonsterCtrl : MonoBehaviour
     private int hashIsAttack = Animator.StringToHash("IsAttack");
     private int hashHit = Animator.StringToHash("Hit");
     private int hashDie = Animator.StringToHash("Die");
+    private int hashPlayerDie = Animator.StringToHash("PlayerDie");
 
     // Monster Health
     private float hp = 100.0f;
@@ -130,5 +131,10 @@ public class MonsterCtrl : MonoBehaviour
                 state = State.DIE;
             }
         }
+    }
+
+    public void YouWin()
+    {
+
     }
 }
